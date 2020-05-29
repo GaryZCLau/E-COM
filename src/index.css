@@ -34,6 +34,10 @@ hr {
   margin-bottom: 30px
 }
 
+.bottomhr {
+  margin-top: 30px
+}
+
 .prodimg {
   width: 10rem;
   height: 10rem;

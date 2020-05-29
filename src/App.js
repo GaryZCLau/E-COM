@@ -99,6 +99,8 @@ class App extends React.Component {
           <Route path="/cart" render={()=><Cart cpsProd={this.state.cps} handleDelete={this.handleDelete}/>}/>
           <Route render={()=><h1 style={{textAlign:"center"}}>Page not found</h1>}/>
         </Switch>
+        <hr className="bottomhr"/>
+        
       </div>
 
     )
