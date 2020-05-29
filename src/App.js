@@ -63,6 +63,10 @@ class App extends React.Component {
       })
     }).then(r=>r.json()).then((newCpObj) => {
       console.log(newCpObj)
+      let copyOfCps = [...this.state.cps, newCpObj]
+      this.setState({
+        cps: copyOfCps
+      })
     })
 
   }

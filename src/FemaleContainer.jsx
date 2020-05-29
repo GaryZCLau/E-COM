@@ -10,6 +10,7 @@ export default class FemaleContainer extends React.Component{
             return <FemaleProduct 
                 singleProd={prodObj}
                 key={prodObj.id}
+                handlePostToCart={this.props.handlePostToCart}
             />
         })
 

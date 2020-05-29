@@ -2,6 +2,9 @@ import React from 'react'
 
 export default class FemaleProduct extends React.Component{
 
+    handleAddToCart = () => {
+        this.props.handlePostToCart(this.props.singleProd.id)
+    }
 
     render(){
 
@@ -14,7 +17,7 @@ export default class FemaleProduct extends React.Component{
                 <img className="prodimg" src={image} alt={name}/>
                 <h2>{name}</h2>
                 <div>${price}</div>
-                <button className="button">Add to Cart</button>
+                <button className="button" onClick={this.handleAddToCart}>Add to Cart</button>
             </div>
 
         )

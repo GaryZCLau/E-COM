@@ -6,7 +6,7 @@ export default class MaleContainer extends React.Component{
 
     render(){
 
-        console.log(this.props)
+        // console.log(this.props)
         
         let arrayOfProd = this.props.maleProd.map((prodObj) => {
             return <MaleProduct 
