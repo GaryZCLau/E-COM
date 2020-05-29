@@ -12,6 +12,11 @@ code {
     monospace;
 } */
 
+.homeimg {
+  width: 33%;
+  height: 30em;
+}
+
 .nav {
   text-align: center;
 }
