@@ -13,7 +13,7 @@ code {
 } */
 
 .nav {
-  text-align: center
+  text-align: center;
 }
 
 .navli {
@@ -23,6 +23,10 @@ code {
   font-weight: 400;
   letter-spacing: .5px;
   
+}
+
+hr {
+  margin-bottom: 30px
 }
 
 .prodimg {
@@ -89,4 +93,8 @@ div {
 
 .total{
   font-weight: 400
+}
+
+.cartbutton{
+  float: right
 }

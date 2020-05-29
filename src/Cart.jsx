@@ -2,6 +2,9 @@ import React from 'react'
 
 export default class Cart extends React.Component{
 
+    handleClick = () => {
+        this.props.handleDelete(this.props.singleProd.id)
+    }
 
     render(){
 
@@ -11,10 +14,11 @@ export default class Cart extends React.Component{
 
 
         return(
-        <div className="cartbox">
+            <div className="cartbox">
+            <button className="cartbutton" onClick={this.handleClick}>X</button>
             <img className="cartimg" src={image} alt={name}/>
             <h2>{name}</h2>
-            <div>${price}</div>
+            <p>${price}</p>
         </div>
         )
     }

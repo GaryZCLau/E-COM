@@ -21,7 +21,7 @@ const NavBar = () => {
         <NavLink to="/men" style={link} activeStyle={{color: 'lightblue'}}>Men</NavLink>
       </li>
       <li className="navli">
-        <NavLink to="/women" style={link} activeStyle={{color: 'lightblue'}}>Female</NavLink>
+        <NavLink to="/women" style={link} activeStyle={{color: 'lightblue'}}>Women</NavLink>
       </li>
       <li className="navli">
         <NavLink to="/cart" style={link} activeStyle={{color: 'lightblue'}}>Cart</NavLink>

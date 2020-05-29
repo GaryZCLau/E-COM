@@ -68,19 +68,24 @@ class App extends React.Component {
         cps: copyOfCps
       })
     })
+  }
 
+  handleDelete = (cpId) => {
+    // console.log(cpId)
+    fetch(`http://localhost:3000/cps/${cpId}`, {
+      method: "DELETE"
+    })
+    .then(r=>r.json())
+    .then((deletedCp) => {
+      let copyOfCps = this.state.cps.filter((singleCp) => {
+        return singleCp.id !== cpId
+      })
+      this.setState({cps: copyOfCps})
+    })
   }
   
 
   render(){
-
-    // console.log(this.state)
-    // let femaleObj = this.state.sex.find(sexObj => {return sexObj.gender === "female"})
-    // console.log(femaleObj)
-
-    // let maleObj = this.state.sex.find(sexObj => {return sexObj.gender === "male"})
-    // console.log(maleObj)
-
 
     return (
 
@@ -91,7 +96,7 @@ class App extends React.Component {
           <Route exact path="/" component={Home}/>
           <Route path="/men" render={()=><Male maleProd={this.state.maleProd} handlePostToCart={this.handlePostToCart}/>}/>
           <Route path="/women" render={()=><Female femaleProd={this.state.femaleProd} handlePostToCart={this.handlePostToCart}/>}/>
-          <Route path="/cart" render={()=><Cart cpsProd={this.state.cps}/>}/>
+          <Route path="/cart" render={()=><Cart cpsProd={this.state.cps} handleDelete={this.handleDelete}/>}/>
           <Route render={()=><h1 style={{textAlign:"center"}}>Page not found</h1>}/>
         </Switch>
       </div>

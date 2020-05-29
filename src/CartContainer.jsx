@@ -11,6 +11,10 @@ export default class CartContainer extends React.Component{
         })
         return newTotal
     }
+
+    handleCheckOut = () => {
+        alert("Order Received!")
+    }
     
     render(){
 
@@ -19,6 +23,7 @@ export default class CartContainer extends React.Component{
             return <Cart 
                 singleProd={cpsObj}
                 key={cpsObj.id}
+                handleDelete={this.props.handleDelete}
             />
         })
 
@@ -26,7 +31,7 @@ export default class CartContainer extends React.Component{
             <div>
                 {arrayOfCarts}
                 <h2 className="total">Total: ${this.grandTotal()}</h2>
-                <button className="checkoutbutton">Check Out!</button>
+                <button className="checkoutbutton" onClick={this.handleCheckOut}>Check Out!</button>
             </div>
         )
     }
