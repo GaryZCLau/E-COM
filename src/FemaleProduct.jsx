@@ -13,7 +13,7 @@ export default class FemaleProduct extends React.Component{
             <div className="box">
                 <img className="prodimg" src={image} alt={name}/>
                 <h2>{name}</h2>
-                <div>${price}0</div>
+                <div>${price}</div>
                 <button className="button">Add to Cart</button>
             </div>
 

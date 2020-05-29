@@ -19,28 +19,74 @@ code {
 .navli {
   list-style-type: none;
   display: inline-block;
-  margin: 2em
+  margin: 2em;
+  font-weight: 400;
+  letter-spacing: .5px;
+  
 }
 
-.prodimg{
+.prodimg {
   width: 10rem;
   height: 10rem;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  justify-self: center;
+  justify-self: center
 }
 
-.box{
+div {
   text-align: center;
-  border: grey solid 1px;
+}
+
+.box {
+  text-align: center;
+  border: black solid 1px;
   padding: 1rem;
   width: 15rem;
   height: 15rem;
   display: inline-grid;
+  margin: 1rem 2rem;
+}
+
+.cartbox{
+  text-align: center;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: 50%;
+  height: 8rem;
+  display: block;
+  float: left;
   margin: 1rem 2rem
 }
 
-.button{
-  
+.cartimg{
+  width: 8rem;
+  height: 8rem;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  float: left
+}
+
+.checkoutbutton{
+  display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    text-align: center;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    line-height: 1.5;
+    margin-bottom: 12px;
+    width: 15%;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.2s ease 0s;
+    background: rgb(17, 17, 17);
+    padding: 10px 18px;
+    border-radius: 30px;
+}
+
+.total{
+  font-weight: 400
 }

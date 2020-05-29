@@ -5,12 +5,13 @@ import './App.css';
 import Home from './Home'
 import Female from './FemaleContainer'
 import Male from './MaleContainer'
-import Cart from './Cart'
+import Cart from './CartContainer'
 
 class App extends React.Component {
 
   state = {
     cart: [],
+    cps: [],
     maleProd: [],
     femaleProd: []
   }
@@ -23,11 +24,18 @@ class App extends React.Component {
       this.setState({
         cart: cartObj
       })
+
+      let cpsObj = cartObj.find(cObj => {return cObj.cps})
+      // console.log(cpsObj)
+
+      this.setState({
+        cps: cpsObj.cps
+      })
     })
 
     fetch('http://localhost:3000/sexes').then(r=>r.json())
     .then((sexObj) => {
-      console.log(sexObj)
+      // console.log(sexObj)
 
       let femaleObj = sexObj.find(sexObj => {return sexObj.gender === "female"})
       let maleObj = sexObj.find(sexObj => {return sexObj.gender === "male"})
@@ -37,8 +45,25 @@ class App extends React.Component {
         maleProd: maleObj.products
       })
     })
+  }
 
 
+  handlePostToCart = (productId) => {
+    // console.log(productId)
+    // console.log(this.state.cart[0].id)
+    let cartId = this.state.cart[0].id
+    fetch('http://localhost:3000/cps', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        cart_id: cartId,
+        product_id: productId
+      })
+    }).then(r=>r.json()).then((newCpObj) => {
+      console.log(newCpObj)
+    })
 
   }
   
@@ -60,9 +85,9 @@ class App extends React.Component {
         <hr/>
         <Switch>
           <Route exact path="/" component={Home}/>
-          <Route path="/men" render={()=><Male maleProd={this.state.maleProd}/>}/>
-          <Route path="/women" render={()=><Female femaleProd={this.state.femaleProd} />}/>
-          <Route path="/cart" render={()=><Cart />}/>
+          <Route path="/men" render={()=><Male maleProd={this.state.maleProd} handlePostToCart={this.handlePostToCart}/>}/>
+          <Route path="/women" render={()=><Female femaleProd={this.state.femaleProd} handlePostToCart={this.handlePostToCart}/>}/>
+          <Route path="/cart" render={()=><Cart cpsProd={this.state.cps}/>}/>
           <Route render={()=><h1 style={{textAlign:"center"}}>Page not found</h1>}/>
         </Switch>
       </div>
