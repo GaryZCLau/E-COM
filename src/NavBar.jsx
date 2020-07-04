@@ -15,7 +15,7 @@ const NavBar = () => {
   return(
     <ul className="nav">
       <li className="navli">
-        <NavLink to="/" exact style={link} activeStyle={{color: 'lightblue'}}>Visual</NavLink>
+        <NavLink to="/" exact style={link} activeStyle={{color: 'lightblue'}}>Home</NavLink>
       </li>
       <li className="navli">
         <NavLink to="/men" style={link} activeStyle={{color: 'lightblue'}}>Men</NavLink>
